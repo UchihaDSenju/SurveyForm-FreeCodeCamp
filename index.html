@@ -7,8 +7,8 @@
     
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <title>Form</title>
 </head>
 <body>
@@ -20,55 +20,58 @@
     <section> 
         <div class="main">
             <form action="" id="survey-form">
-            <label for="name" id="name-label">NAME:</label>
-            <input class="inputField" type="text" required id="name" placeholder="Enter given name">
-            <br>
-            <label for="email" id="email-label">EMAIL:</label>
-            <input class="inputField" type="email" required id="email" placeholder="Enter your email">
-            <br>
-            <label for="age" id="number-label">AGE</label>
-            <input class="inputField" type="number" min="1" max="200" id="number" required placeholder="Enter your age">
-            <br>
-            <label for="roleselect">Which option describes your current role</label>
-            <select name="role" id="dropdown">
-                <option value="" disabled selected>Choose Your Role</option>
-                <option value="student">Student</option>
-                <option value="freelancer">FreeLancer</option>
-                <option value="other">Other</option>
-                <option value="cnts">Choose not to say</option>
-            </select>
-            <fieldset>
-                <legend>How would You recommend freeCodeCamp</legend>
-                <input type="radio" name="rec" value="definitely">
-                <label for="definitely">Definitely</label>
+                <label for="name" id="name-label">NAME:</label>
+                <input class="inputField" type="text" required id="name" placeholder="Enter given name">
                 <br>
-                <input type="radio" name="rec" value="maybe">
-                <label for="maybe">Maybe</label>
-            </fieldset>
-            <label for="fav">Your Favorite feature of freeCodeCamp</label>
-            <select name="fav" id="">
-                <option value="" disabled selected>Choose From Below Options</option>
-                <option value="learn">Ease of Learning</option>
-                <option value="projects">Projects</option>
-                <option value="open">Open Source</option>
-                <option value="none">None</option>
-            </select>
-            <br><br>
-            <label for="improve">What would you like to improve(tick whichever applies) :</label>
-            <p><input type="checkbox" value="None">Front-End Projects</p>
-            <p><input type="checkbox" value="Wiki">Wiki</p>
-            <p><input type="checkbox" value="Forum">Forum</p>
-            <p><input type="checkbox" value="Videos">Videos</p>
-            <p><input type="checkbox" value="Challenges">Challengess</p>
-            <p><input type="checkbox" value="Additional_Courses">Additional Courses</p>
-            <div>
-                <label for="comments">Any Comments or suggestions?</label>
-                <textarea class="inputField" name="comment" id="" cols="40" rows="10" placeholder="Enter Your Comments Here...."></textarea>
-            </div>
-            <input type="submit" id="submit">
+                <label for="email" id="email-label">EMAIL:</label>
+                <input class="inputField" type="email" required id="email" placeholder="Enter your email">
+                <br>
+                <label for="age" id="number-label">AGE</label>
+                <input class="inputField" type="number" min="1" max="200" id="age" required placeholder="Enter your age">
+                <br>
+                <label for="roleselect">Which option describes your current role</label>
+                <select name="role" id="role">
+                    <option value="" disabled selected>Choose Your Role</option>
+                    <option value="student">Student</option>
+                    <option value="freelancer">FreeLancer</option>
+                    <option value="other">Other</option>
+                    <option value="cnts">Choose not to say</option>
+                </select>
+                <fieldset>
+                    <legend>How would You recommend freeCodeCamp</legend>
+                    <input class="recommend" type="radio" name="rec" value="definitely">
+                    <label for="definitely">Definitely</label>
+                    <br>
+                    <input class="recommend" type="radio" name="rec" value="maybe">
+                    <label for="maybe">Maybe</label>
+                </fieldset>
+                <label for="fav">Your Favorite feature of freeCodeCamp</label>
+                <select name="fav" id="favFeature">
+                    <option value="" disabled selected>Choose From Below Options</option>
+                    <option value="learn">Ease of Learning</option>
+                    <option value="projects">Projects</option>
+                    <option value="open">Open Source</option>
+                    <option value="none">None</option>
+                </select>
+                <br><br>
+                <label for="improve">What would you like to improve(tick whichever applies) :</label>
+                <p><input class="improve" type="checkbox" value="Front-End Projects">Front-End Projects</p>
+                <p><input class="improve" type="checkbox" value="Wiki">Wiki</p>
+                <p><input class="improve" type="checkbox" value="Forum">Forum</p>
+                <p><input class="improve" type="checkbox" value="Videos">Videos</p>
+                <p><input class="improve" type="checkbox" value="Challenges">Challengess</p>
+                <p><input class="improve" type="checkbox" value="Additional_Courses">Additional Courses</p>
+                <div>
+                    <label for="comments">Any Comments or suggestions?</label>
+                    <textarea class="inputField" name="comment" id="comments" cols="40" rows="10" placeholder="Enter Your Comments Here...."></textarea>
+                </div>
+                <input type="submit" id="submit">
             </form>
         </div>
     </section>
-    
+    <!-- <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

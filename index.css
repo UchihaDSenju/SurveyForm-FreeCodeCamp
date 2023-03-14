@@ -1,6 +1,7 @@
 
 body{
     background-image: url('https://img.freepik.com/free-photo/grunge-old-vintage-retro-paper-texture-background_47840-948.jpg?size=626&ext=jpg');
+    min-height: 100vh;
 }
 header,#description{
     text-align: center;

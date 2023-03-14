@@ -18,7 +18,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Database reference 
-var surveyFormDB = firebase.database().ref('surveyForm');
+var surveyFormDB = firebase.database();
+
 var checkbox = document.querySelectorAll('.improve');
 var radio = document.querySelectorAll('.recommend');
 var form = document.getElementById('survey-form');
@@ -34,18 +35,33 @@ form.addEventListener('submit', e => {
     var checkboxValue = getCheckboxValue(checkbox);
     var comments = getElementValue('#comments');
     
+    saveToDatabase(name, email, age, role, willRecommend, favFeature, checkboxValue, comments);
     console.log(name, email, age, role, willRecommend, favFeature, checkboxValue, comments);
+    window.location.reload();
 })
 
 const getElementValue = function(val){
     return document.querySelector(val).value;
 }
 
+const saveToDatabase = function(name, email, age, role, willRecommend, favFeature, checkboxValue, comments){
+  surveyFormDB.ref('survey/' + name).set({
+    name : name, 
+    email: email, 
+    age: age, 
+    role: role, 
+    willRecommend: willRecommend, 
+    favFeature: favFeature, 
+    checkboxValue: checkboxValue, 
+    comments: comments
+  })
+}
+
 const getCheckboxValue = function(elem){
-  let val = "";
+  let val = "-";
   for(let i =0; i<elem.length; i++){
     if(elem[i].checked){
-      val += elem[i].value + " ";
+      val += elem[i].value + "-";
     }
   }
   return val;
